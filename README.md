@@ -1,9 +1,10 @@
 # Filter Dashboard
-Password: TuckSummer24
+ - Password: TuckSummer24
+ - API currently running on: http://ec2-18-219-255-92.us-east-2.compute.amazonaws.com:8000/
 
 ## API Design
-Mongo + Flask + Nginx
-Running on a MacOS VM via an EC2 instance
+Mongo + Flask + Gunicorn
+Running on a Ubuntu VM via an EC2 instance
 
 ## Selenium setup
  - Download a chrome driver from here: https://googlechromelabs.github.io/chrome-for-testing/

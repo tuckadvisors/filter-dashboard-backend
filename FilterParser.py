@@ -67,7 +67,7 @@ class FilterParser:
   '''
   Scrapes information about a filter on pipeline given a group name and a link to that filter
   '''
-  def scrape_filter_count(self, link_to_group: Dict[str, str], wait_time = 35) -> Dict[str: str]:
+  def scrape_filter_count(self, link_to_group: Dict[str, str], wait_time = 35):
     for link in link_to_group.keys():
       # login to pipeline and set up the document that'll be inserted into the database
       self.pipeline_login(link)
@@ -98,5 +98,6 @@ class FilterParser:
 
 # Testing
 if __name__ == '__main__':
-  e = FilterParser("/Users/athreya/Downloads/chromedriver", "athreya.daniel@tuckadvisors.com", "Athreya123!")
-  e.scrape_filter_count({"https://app.pipelinecrm.com/list/19633216": "test group 1"})
+  e = FilterParser("./chromedriver", "athreya.daniel@tuckadvisors.com", "Athreya123!")
+  test_result = e.scrape_filter_count({"https://app.pipelinecrm.com/list/19633216": "test group 1"})
+  print(test_result)

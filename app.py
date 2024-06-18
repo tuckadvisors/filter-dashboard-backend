@@ -28,7 +28,7 @@ collection = db[collection_name]
 
 @app.route('/')
 def home():
-  return ""
+  return "API home"
 '''
 Validates password entered in on the dashboard
 See README.md for password
@@ -50,7 +50,7 @@ def login():
 Add one filter to the database
 '''  
 @app.route('/addFilter', methods=['POST'])
-@cross_origin
+@cross_origin()
 def add_filter():
   filter_link = request.get_json.get('link')
   filter_group = request.get_json.get('group')
@@ -66,9 +66,9 @@ def add_filter():
 '''
 Update all filters in the database
 '''
-@app.route('/updateFilters', methods=['POST'])
-@cross_origin
-def update_filters():
+@app.route('/updateAllFilters', methods=['POST'])
+@cross_origin()
+def update_allFilters():
   all_results = collection.find({})
   for result in all_results:
     # scrape the new information
@@ -85,7 +85,7 @@ def update_filters():
 Delete one filter from the database
 '''  
 @app.route('/deleteFilter', methods=['POST'])
-@cross_origin
+@cross_origin()
 def delete_filter():
   filter_link = request.get_json.get('link')
   if collection.find({"link": filter_link}):
@@ -98,8 +98,8 @@ def delete_filter():
 Bulk delete a group of filters from the database
 '''  
 @app.route('/bulkDeleteFilters', methods=['POST'])
-@cross_origin
-def delete_filter():
+@cross_origin()
+def bulk_deleteFilters():
   filter_group = request.get_json.get('group')
   if collection.find({"group": filter_group}):
     collection.delete_many({"group": filter_group})
@@ -109,4 +109,4 @@ def delete_filter():
 
 # Run the server
 if __name__ == '__main__':
-   app.run(host='0.0.0.0', port=5000)
+   app.run()
