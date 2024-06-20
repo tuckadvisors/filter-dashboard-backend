@@ -19,5 +19,11 @@ Running on a Ubuntu VM via an EC2 instance
 
 // in progress
 
+Restarting the server
+ - sudo systemctl daemon-reload
+ - sudo systemctl restart flask_app
+
+Network settings on MongoDB
+
 # How to connect to the EC2 Instance
 Open terminal and run `ssh -i ~/Downloads/filter-dashboard-backend-key.pem ubuntu@ec2-3-144-143-77.us-east-2.compute.amazonaws.com`
