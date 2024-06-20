@@ -126,6 +126,7 @@ google-resumable-media==2.7.0
 googleapis-common-protos==1.62.0
 greenlet @ file:///Users/cbousseau/work/recipes/ci_py311/greenlet_1677926210411/work
 grpcio==1.60.1
+gunicorn==22.0.0
 h11==0.14.0
 h5py @ file:///Users/cbousseau/work/recipes/ci_py311/h5py_1677937901660/work
 HeapDict @ file:///Users/ktietz/demo/mc3/conda-bld/heapdict_1630598515714/work
