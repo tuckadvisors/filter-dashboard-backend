@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from typing import Dict
 from bs4 import BeautifulSoup
 import time
 
@@ -79,7 +78,7 @@ class FilterParser:
   '''
   Scrapes information about a filter on pipeline given a group name and a link to that filter
   '''
-  def scrape_filter_count(self, link_to_group: Dict[str, str], wait_time = 60):
+  def scrape_filter_count(self, link_to_group, wait_time = 60):
     link = list(link_to_group.keys())[0]
     # login to pipeline and set up the document that'll be inserted into the database
     self.pipeline_login(link)
